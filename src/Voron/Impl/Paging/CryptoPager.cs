@@ -83,19 +83,18 @@ namespace Voron.Impl.Paging
         public NativeMemory.ThreadStats AllocatingThread;
         public long Generation;
         public bool SkipOnTxCommit;
+        private int _usages;
 
-        public int Usages { get; private set; }
-
-        public bool CanRelease => Usages == 0;
+        public bool CanRelease => _usages == 0;
 
         public void AddRef()
         {
-            Usages++;
+            _usages++;
         }
 
         public void ReleaseRef()
         {
-            Usages--;
+            _usages--;
         }
     }
 
