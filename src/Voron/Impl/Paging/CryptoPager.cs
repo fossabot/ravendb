@@ -316,6 +316,7 @@ namespace Voron.Impl.Paging
                     buffer.Modified = true;
                 }
 
+                buffer.AddRef();
                 state[valuePositionInScratchBuffer + i] = buffer;
             }
 
