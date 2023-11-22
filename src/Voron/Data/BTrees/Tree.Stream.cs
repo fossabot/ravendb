@@ -366,8 +366,6 @@ namespace Voron.Data.BTrees
                     if (CryptoPager.CanReturnBuffer(buffer) == false)
                         return;
 
-                    buffer.ReleaseRef();
-
                     _llt._pageLocator.Reset(page.PageNumber);
                     pagerStates.RemoveBuffer(page.PageNumber);
 
